@@ -15,10 +15,8 @@ type NftCardProps = {
 };
 
 export function NftCard({ address, tokenId, price }: NftCardProps) {
-  const [tokenURI, setTokenURI] = useState();
   const [image, setImage] = useState("");
   const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
   let navigate = useNavigate();
 
   const { data: tokenURIJson } = useContractRead({
@@ -43,7 +41,6 @@ export function NftCard({ address, tokenId, price }: NftCardProps) {
         );
         setImage(imageURIURL);
         setName(tokenURIResponse.name);
-        setDescription(tokenURIResponse.description);
       }
     }
 

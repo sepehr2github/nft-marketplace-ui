@@ -9,7 +9,6 @@ import {
   useContractWrite,
 } from "wagmi";
 import { Snackbar, Button, Alert } from "@mui/material";
-import { ethers } from "ethers";
 import networkMapping from "../utils/networkMapping.json";
 
 import { GET_ACTIVE_ITEMS_PRICE } from "../queries/listing";
@@ -26,7 +25,7 @@ const NFTDetails = () => {
   const { contractAddress, tokenId } = useParams();
   const { address, isDisconnected } = useAccount();
 
-  const { loading, error, data } = useQuery(GET_ACTIVE_ITEMS_PRICE, {
+  const { data } = useQuery(GET_ACTIVE_ITEMS_PRICE, {
     variables: { address: contractAddress },
   });
 

@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Explore from "./pages/explore";
 import ListNewNft from "./pages/listNewNft";
 import NFTDetails from "./pages/nftDetails";
+import Proceeds from "./pages/proceeds";
 import { WagmiConfig, createClient } from "wagmi";
 import { Buffer } from "buffer";
 import { ConnectKitProvider } from "connectkit";
@@ -52,6 +53,7 @@ function App() {
                     path="token/:contractAddress/:tokenId"
                     element={<NFTDetails />}
                   />
+                  <Route path="proceeds" element={<Proceeds />} />
                 </Routes>
               </div>
             </NftProvider>

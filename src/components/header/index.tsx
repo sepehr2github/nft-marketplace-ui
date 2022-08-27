@@ -1,15 +1,6 @@
 import React from "react";
-import styled from "styled-components";
 import { ConnectKitButton } from "connectkit";
-import { useAccount } from "wagmi";
-import {
-  AppBar,
-  Box,
-  IconButton,
-  MenuItem,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { AppBar, Box, MenuItem, Toolbar, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 export default function Header() {
@@ -36,6 +27,13 @@ export default function Header() {
               }}
             >
               <Typography textAlign="center">List New NFT</Typography>
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                navigate(`/proceeds`);
+              }}
+            >
+              <Typography textAlign="center">Proceeds</Typography>
             </MenuItem>
           </div>
           <ConnectKitButton />

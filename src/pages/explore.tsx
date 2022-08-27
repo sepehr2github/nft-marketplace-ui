@@ -5,23 +5,24 @@ import { NFT } from "../utils/types";
 import { NftCard } from "../components/nftCard";
 
 const Explore = () => {
-  const { loading, error, data } = useQuery(GET_ACTIVE_ITEMS);
-  console.log("datap", data?.activeItems);
+  const { error, data } = useQuery(GET_ACTIVE_ITEMS);
+  console.log("error", error);
+
   return (
     <PageContainer>
       <TitleWrapper>
         <Title>Explore NFTs</Title>
         <Subtitle>2 Token Available</Subtitle>
       </TitleWrapper>
-      {/* <div className="grid grid-cols-4 gap-4"> */}
-      {data?.activeItems?.map((nft: NFT) => (
-        <NftCard
-          address={nft.nftAddress}
-          tokenId={nft.tokenId}
-          price={nft.price}
-        />
-      ))}
-      {/* </div> */}
+      <div className="grid grid-cols-4 gap-20">
+        {data?.activeItems?.map((nft: NFT) => (
+          <NftCard
+            address={nft.nftAddress}
+            tokenId={nft.tokenId}
+            price={nft.price}
+          />
+        ))}
+      </div>
     </PageContainer>
   );
 };
