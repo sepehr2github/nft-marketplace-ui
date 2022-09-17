@@ -22,7 +22,7 @@ function App() {
   if (!window.Buffer) window.Buffer = Buffer;
 
   const client = new ApolloClient({
-    uri: "https://api.studio.thegraph.com/query/23409/nft-marketplace/v0.0.4",
+    uri: "https://api.studio.thegraph.com/query/23409/nft-marketplace/0.0.8",
     cache: new InMemoryCache(),
   });
 
