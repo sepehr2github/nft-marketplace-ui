@@ -12,7 +12,7 @@ const Explore = () => {
     <PageContainer>
       <TitleWrapper>
         <Title>Explore NFTs</Title>
-        <Subtitle>2 Token Available</Subtitle>
+        <Subtitle>Available Tokens</Subtitle>
       </TitleWrapper>
       <div className="grid grid-cols-4 gap-20">
         {data?.activeItems?.map((nft: NFT) => (
